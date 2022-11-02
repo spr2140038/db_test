@@ -1,3 +1,4 @@
+import 'package:db_test/view/expense_list.dart';
 import 'package:flutter/material.dart';
 
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       ),
       routes: <String, WidgetBuilder>{
-        '/': (_) => const Expenselist(),
+        '/': (_) => const ExpenseList(),
       },
     );
   }

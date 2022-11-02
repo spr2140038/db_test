@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../model/db_helper.dart';
+import 'expence_detail_edit.dart';
+import 'expense_detail.dart';
 
 class ExpenseList extends StatefulWidget {
   const ExpenseList({Key? key}) : super(key: key);

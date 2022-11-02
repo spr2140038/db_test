@@ -25,12 +25,12 @@ class _ExpenseDetailState extends State<ExpenseDetail> {
   @override
   void initState() {
     super.initState();
-    catData();
+    expenseData();
   }
 
 // initStateで動かす処理
 // catsテーブルから指定されたidのデータを1件取得する
-  Future catData() async {
+  Future expenseData() async {
     setState(() => isLoading = true);
     expenses = await DBHelper.instance.expenseData(widget.id);
     setState(() => isLoading = false);
