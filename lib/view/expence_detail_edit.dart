@@ -17,24 +17,26 @@ class ExpenseDetailEdit extends StatefulWidget {
 class _ExpenseDetailEditState extends State<ExpenseDetailEdit> {
   late int expense_id;
   late String expense_category_code;
-  late String expense_total_money;
-  late String gender;
-  late String memo;
+  late int expense_total_money;
+  late int expense_consuption_tax;
+  late int expense_amount_including_tax;
+  late DateTime expense_datetime;
+  late String expense_memo;
   late DateTime createdAt;
-  final List<String> _list = <String>['男の子', '女の子', '不明']; // 性別のDropdownの項目を設定
-  late String _selected; // Dropdownの選択値を格納するエリア
-  String value = '不明'; // Dropdownの初期値
-  static const int textExpandedFlex = 1; // 見出しのexpaded flexの比率
-  static const int dataExpandedFlex = 4; // 項目のexpanede flexの比率
+  //final List<String> _list = <String>['男の子', '女の子', '不明']; // 性別のDropdownの項目を設定
+  //late String _selected; // Dropdownの選択値を格納するエリア
+  //String value = '不明'; // Dropdownの初期値
+  //static const int textExpandedFlex = 1; // 見出しのexpaded flexの比率
+  //static const int dataExpandedFlex = 4; // 項目のexpanede flexの比率
 
 // Stateのサブクラスを作成し、initStateをオーバーライドすると、wedgit作成時に処理を動かすことができる。
 // ここでは、各項目の初期値を設定する
   @override
   void initState() {
     super.initState();
-    id = widget.cats?.id ?? 0;
-    name = widget.cats?.name ?? '';
-    birthday = widget.cats?.birthday ?? '';
+    expense_id = widget.expenses?.expense_id ?? 0;
+    expense_category_code = widget.expenses?.expense_category_code ?? '未設定';
+    expense_total_money = widget.cats?.birthday ?? '';
     gender = widget.cats?.gender ?? '';
     _selected = widget.cats?.gender ?? '不明';
     memo = widget.cats?.memo ?? '';

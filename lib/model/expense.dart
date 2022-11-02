@@ -13,7 +13,7 @@ class Expenses {
   late DateTime expense_datetime;
   String? expense_memo;
   late DateTime created_at;
-  late DateTime updated_at;
+  //late DateTime updated_at;
 
   Expenses({
     required this.expense_id,
