@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../model/db_helper.dart';
 import '../model/expense.dart';
+import 'expence_detail_edit.dart';
 
 class ExpenseDetail extends StatefulWidget {
   final int id;
@@ -40,7 +41,7 @@ class _ExpenseDetailState extends State<ExpenseDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('猫詳細'),
+          title: const Text('支出詳細'),
           actions: [
             IconButton(
               onPressed: () async {                          // 鉛筆のアイコンが押されたときの処理を設定
@@ -51,7 +52,7 @@ class _ExpenseDetailState extends State<ExpenseDetail> {
                     ),
                   ),
                 );
-                catData();                                  // 更新後のデータを読み込む
+                expenseData();                                  // 更新後のデータを読み込む
               },
               icon: const Icon(Icons.edit),                 // 鉛筆マークのアイコンを表示
             ),
@@ -86,7 +87,7 @@ class _ExpenseDetailState extends State<ExpenseDetail> {
                 Row(children: [
                   const Expanded(                               // 見出しの設定
                     flex: textExpandedFlex,
-                    child: Text('名前',
+                    child: Text('合計金額',
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -94,14 +95,14 @@ class _ExpenseDetailState extends State<ExpenseDetail> {
                     flex: dataExpandedFlex,
                     child: Container(                           // catsテーブルのnameの表示を設定
                       padding: const EdgeInsets.all(5.0),
-                      child: Text(cats.name),
+                      child: Text(expenses.expense_total_money),
                     ),
                   ),
                 ],),
                 Row(children: [
                   const Expanded(                              // 見出しの設定（性別)
                     flex: textExpandedFlex,
-                    child: Text('性別',
+                    child: Text('消費税',
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -109,14 +110,14 @@ class _ExpenseDetailState extends State<ExpenseDetail> {
                     flex: dataExpandedFlex,
                     child: Container(                          // catsテーブルのgenderの表示を設定
                       padding: const EdgeInsets.all(5.0),
-                      child: Text(cats.gender),
+                      child: Text(expenses.expense_consuption_tax),
                     ),
                   ),
                 ],),
                 Row(children: [
                   const Expanded(           // 「誕生日」の見出し行の設定
                     flex: textExpandedFlex,
-                    child: Text('誕生日',
+                    child: Text('税込み金額',
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -124,14 +125,14 @@ class _ExpenseDetailState extends State<ExpenseDetail> {
                     flex: dataExpandedFlex,
                     child: Container(                                      // catsテーブルのbirthdayの表示を設定
                       padding: const EdgeInsets.all(5.0),
-                      child: Text(cats.birthday),
+                      child: Text(expenses.expense_amount_including_tax),
                     ),
                   )
                 ],),
                 Row(children: [
                   const Expanded(     // 「メモ」の見出し行の設定
                       flex: textExpandedFlex,
-                      child: Text('メモ',
+                      child: Text('日付',
                         textAlign: TextAlign.center,
                       )
                   ),
@@ -139,7 +140,22 @@ class _ExpenseDetailState extends State<ExpenseDetail> {
                     flex: dataExpandedFlex,
                     child: Container(                                      // catsテーブルのmemoの表示を設定
                       padding: const EdgeInsets.all(5.0),
-                      child: Text(cats.memo),
+                      child: Text(expenses.expense_datetime),
+                    ),
+                  ),
+                ],),
+                Row(children: [
+                  const Expanded(                              // 見出しの設定（性別)
+                    flex: textExpandedFlex,
+                    child: Text('メモ',
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Expanded(
+                    flex: dataExpandedFlex,
+                    child: Container(                          // catsテーブルのgenderの表示を設定
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text(expenses.expense_memo),
                     ),
                   ),
                 ],),
