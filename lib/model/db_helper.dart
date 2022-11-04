@@ -29,12 +29,12 @@ class DBHelper {
 
   DBHelper._createInstance();
 
-  Future<Database> get database async{
+  Future<Database> get database async {
     return _database ??= await _initDB();
   }
 
   Future<Database> _initDB() async{
-    String path(await getDatabasesPath(), 'expense.db');
+    String path = join(await getDatabasesPath(), 'expense.db');
 
     return await openDatabase(
       path,

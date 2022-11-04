@@ -76,7 +76,7 @@ class _ExpenseDetailEditState extends State<ExpenseDetailEdit> {
               flex: dataExpandedFlex,
               child: TextFormField(
                 maxLines: 1,
-                initialValue: expense_total_money ,
+                initialValue: expense_total_money,
                 //decoration: const InputDecoration(
                   //hintText: '名前を入力してください',
                 //),

@@ -62,7 +62,7 @@ class _ExpenseListPageState extends State<ExpenseList> {
                                 )
                             )
                         ),
-                        Text(expense.expense_total_money,style: const TextStyle(fontSize: 30),),     // catのnameを表示
+                        Text(expense.expense_amount_including_tax,style: const TextStyle(fontSize: 30),),     // catのnameを表示
                       ]
                   ),
                 ),
